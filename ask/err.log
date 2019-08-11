@@ -42,3 +42,48 @@ ImportError: No module named django.core.wsgi
 [2019-08-10 01:22:59 +0000] [20940] [INFO] Worker exiting (pid: 20940)
 [2019-08-10 01:22:59 +0000] [20936] [INFO] Shutting down: Master
 [2019-08-10 01:22:59 +0000] [20936] [INFO] Reason: Worker failed to boot.
+[2019-08-10 12:50:20 +0300] [8385] [INFO] Starting gunicorn 19.9.0
+[2019-08-10 12:50:20 +0300] [8385] [INFO] Listening at: http://0.0.0.0:8000 (8385)
+[2019-08-10 12:50:20 +0300] [8385] [INFO] Using worker: sync
+[2019-08-10 12:50:20 +0300] [8388] [INFO] Booting worker with pid: 8388
+[2019-08-10 12:50:20 +0300] [8388] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/gunicorn/arbiter.py", line 583, in spawn_worker
+    worker.init_process()
+  File "/usr/local/lib/python3.5/dist-packages/gunicorn/workers/base.py", line 129, in init_process
+    self.load_wsgi()
+  File "/usr/local/lib/python3.5/dist-packages/gunicorn/workers/base.py", line 138, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/usr/local/lib/python3.5/dist-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/usr/local/lib/python3.5/dist-packages/gunicorn/app/wsgiapp.py", line 52, in load
+    return self.load_wsgiapp()
+  File "/usr/local/lib/python3.5/dist-packages/gunicorn/app/wsgiapp.py", line 41, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/usr/local/lib/python3.5/dist-packages/gunicorn/util.py", line 350, in import_app
+    __import__(module)
+  File "/home/user/PycharmProjects/web/web_S/ask/ask/wsgi.py", line 12, in <module>
+    from django.core.wsgi import get_wsgi_application
+ImportError: No module named 'django'
+[2019-08-10 12:50:20 +0300] [8388] [INFO] Worker exiting (pid: 8388)
+[2019-08-10 12:50:20 +0300] [8385] [INFO] Shutting down: Master
+[2019-08-10 12:50:20 +0300] [8385] [INFO] Reason: Worker failed to boot.
+[2019-08-10 12:51:53 +0300] [8466] [INFO] Starting gunicorn 19.9.0
+[2019-08-10 12:51:53 +0300] [8466] [INFO] Listening at: http://0.0.0.0:8000 (8466)
+[2019-08-10 12:51:53 +0300] [8466] [INFO] Using worker: sync
+[2019-08-10 12:51:53 +0300] [8469] [INFO] Booting worker with pid: 8469
+[2019-08-10 12:57:59 +0300] [8730] [INFO] Starting gunicorn 19.9.0
+[2019-08-10 12:57:59 +0300] [8730] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2019-08-10 12:57:59 +0300] [8730] [ERROR] Retrying in 1 second.
+[2019-08-10 12:58:00 +0300] [8730] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2019-08-10 12:58:00 +0300] [8730] [ERROR] Retrying in 1 second.
+[2019-08-10 12:58:01 +0300] [8730] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2019-08-10 12:58:01 +0300] [8730] [ERROR] Retrying in 1 second.
+[2019-08-10 12:58:02 +0300] [8730] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2019-08-10 12:58:02 +0300] [8730] [ERROR] Retrying in 1 second.
+[2019-08-10 12:58:03 +0300] [8730] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2019-08-10 12:58:03 +0300] [8730] [ERROR] Retrying in 1 second.
+[2019-08-10 12:58:04 +0300] [8730] [ERROR] Can't connect to ('0.0.0.0', 8000)
+[2019-08-10 10:25:25 +0000] [8469] [INFO] Worker exiting (pid: 8469)
+[2019-08-10 13:25:25 +0300] [8466] [INFO] Handling signal: term
+[2019-08-10 13:25:25 +0300] [8466] [INFO] Shutting down: Master
