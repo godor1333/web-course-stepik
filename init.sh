@@ -1,11 +1,8 @@
 #!/usr/bin/env bash
 
-sudo rm -r /etc/nginx/sites-enabled/default
-sudo ln -sf /home/box/web/etc/nginx.conf  /etc/nginx/sites-enabled/test.conf
+sudo ln -sf /home/box/web/etc/nginx.conf /etc/nginx/sites-enabled/default
 sudo /etc/init.d/nginx restart
-
-sudo rm -r /etc/gunicorn.d/*
-sudo ln -sf /home/box/web/etc/hello.py   /etc/gunicorn.d/hello.py
-sudo /etc/init.d/gunicorn restart
-sudo ln -sf /home/box/web/etc/django_conf.py /etc/gunicorn.d/django_conf.py
-sudo gunicorn -c /etc/gunicorn.d/django_conf.py ask.wsgi:application
+#sudo ln -sf /home/box/web/etc/hello.py /etc/gunicorn.d/hello.py
+sudo ln -sf /home/box/web/etc/dj_conf.py /etc/gunicorn.d/dj_conf.py
+#gunicorn -c /etc/gunicorn.d/hello.py hello:app
+gunicorn -c /etc/gunicorn.d/dj_conf.py ask.wsgi:application
